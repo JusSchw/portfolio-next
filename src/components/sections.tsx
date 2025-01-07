@@ -1,10 +1,18 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { GithubLogo } from "./logos";
 import Threadmill from "./treadmill";
+import { calculateAge } from "@/util/age";
+import { JSX } from "react";
 
-export default function HeroSection() {
+export function HeroSection() {
   return (
     <>
-      <section className="h-[calc(100vh-5rem)] w-full flex flex-col sm:flex-row justify-center items-center gap-4">
+      <section
+        className="h-[calc(100vh-5rem)] w-full flex flex-col sm:flex-row justify-center items-center gap-4"
+        id="hero"
+      >
         <GithubLogo />
         <img
           src="/avatar_placeholder.jpg"
