@@ -1,32 +1,31 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { GithubLogo } from "./logos";
 import Threadmill, { HoverCard } from "./general";
-import { useState } from "react";
 import { calculateAge } from "@/util/age";
+import Image from "next/image";
 
 export function HeroSection() {
   return (
     <>
       <section
-        className="h-[calc(100vh-5rem)] w-full flex flex-col sm:flex-row justify-center items-center gap-4"
+        className="flex sm:flex-row flex-col justify-center items-center gap-4 w-full h-[calc(100vh-5rem)]"
         id="hero"
       >
         <GithubLogo />
         <img
           src="/avatar_placeholder.jpg"
-          className="h-32 w-32 rounded-full object-contain outline-2 outline-offset-4 outline outline-red-500"
+          className="rounded-full w-32 h-32 object-contain outline outline-2 outline-offset-4 outline-red-500"
           alt="Avatar"
         />
         <div className="text-center">
-          <h1 className="text-5xl font-serif italic text-nowrap">
+          <h1 className="font-serif text-5xl text-nowrap italic">
             Justin Schwab
           </h1>
-          <h2 className="text-2xl font-extrabold text-nowrap">
+          <h2 className="font-extrabold text-2xl text-nowrap">
             FULLSTACK DEV MIT ❤️
           </h2>
-          <div className="w-full h-0.5 bg-white rounded-full" />
+          <div className="bg-white rounded-full w-full h-0.5" />
         </div>
       </section>
       <Threadmill />
@@ -38,33 +37,34 @@ export function AboutSection() {
   return (
     <>
       <section
-        className="w-full min-h-screen flex-col flex items-center"
+        className="flex flex-col items-center w-full min-h-screen"
         id="about"
       >
         <div className="h-[7.5rem]" />
-        <h2 className="text-4xl font-extrabold top-5 md:sticky">
+        <h2 className="top-5 md:sticky font-extrabold text-4xl">
           FAKTEN ÜBER MICH
         </h2>
         <div className="h-10" />
-        <div className="w-full h-full flex flex-wrap gap-4 justify-around px-4">
+        <div className="flex flex-wrap justify-around gap-4 px-4 w-full max-w-[75%] h-full">
           <HoverCard>
-            <p className="p-4 text-black text-xl absolute inset-0 font-semibold">
+            <p className="absolute inset-0 p-4 font-semibold text-black text-xl">
               Ich bin {calculateAge("2003-03-26")} Jahre alt und habe mein
               Fachabitur sowie die Ausbildung zum staatlich geprüften
               Informationstechnischer Assistent absolviert.
             </p>
           </HoverCard>
           <HoverCard>
-            <p className="p-4 text-black text-xl absolute inset-0 font-semibold">
-              Meine Lieblingssprache ist Rust
-            </p>
-          </HoverCard>
-          <HoverCard>
             <>
-              <p className="p-4 text-black text-xl absolute inset-0 font-semibold">
-                Zusammen mit meinen Bruder haben wir das Spiel Pitfall Protocol
-                programmiert.
+              <p className="absolute inset-0 p-4 font-semibold text-black text-xl">
+                Rust ist meine Superpower
               </p>
+              <Image
+                src="/rustacean.png"
+                width={200}
+                height={200}
+                alt=""
+                className="right-0 bottom-0 absolute"
+              />
             </>
           </HoverCard>
           <HoverCard />
